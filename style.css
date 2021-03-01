@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Raleway-VariableFont_wght';
+    src: url('Raleway-VariableFont_wght.eot') format('eot'),
+         url('Raleway-VariableFont_wght.ttf') format('truetype'),
+         url('Raleway-VariableFont_wght.svg') format('svg');
+}
+@media screen and (max-width: 425px)
+{
+	/*header*/
+	h1,h2,p {
+		font-family: Raleway-VariableFont_wght;
+	}
+	h1 {
+		font-size: 1.5em;
+	}
+    #image {
+    	text-align: center;
+    }
+    #image img {
+    	width: 40%;
+    	margin-bottom:10px;
+    }
+    .home {
+    	background-color:#f6f6f6;
+    	height: 300px;
+    	width: 100%;
+    }
+    .formulaire{
+    	text-align: center;
+    	background-color: #e3e2e2;
+    	box-shadow: inset 0px 4px 5px #bfbfbf;
+    }
+    .formulaire input, label{
+		padding: 5px 0 5px 0;
+		margin: 10px 0 10px 0;
+		font-size:1em;
+		font-weight: bold;
+		background-color: #e3e2e2;
+		border:none;
+		text-align: center;
+		width: 32%;
+	}
+	.titre_principal {
+		width: 80%;
+		margin: auto;
+	}
+	.home h2 {
+		font-size:1em;
+	}
+	.home h1,h2 {
+		text-align: center;
+	}
+	.button1 {
+   		display: block;
+   		margin : auto;
+   		background:linear-gradient(#cc81ec, #8932b0);
+   		border:none;
+   		border-radius: 25px;
+   		padding: 15px 15px 15px 15px;
+   		margin-top: 30px;
+   		font-size: 1em;
+   		box-shadow:0px 4px 5px #bfbfbf
+	}
+	.button1 a {
+		text-decoration: none;
+		color: #FFF;
+	}
+
+	/*body*/
+	.Fonctionnement h2 {
+		text-align: left;
+		font-size: 1,1em;
+	}
+}
