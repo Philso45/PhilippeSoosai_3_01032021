@@ -155,15 +155,15 @@
 	}
 	.entree_1 span {
 		font-weight: bold;
-		margin-left: 46%;
+		margin-left: 48%;
 	}
 	.entree_2 span {
 		font-weight: bold;
-		margin-left: 30%;
+		margin-left: 22%;
 	}
 	.entree_3 span {
 		font-weight: bold;
-		margin-left: 14%;
+		margin-left: 66%;
 	}
 
 	.Entree p:nth-child(2) {
@@ -172,15 +172,18 @@
 	
 	.Plats_1 span {
 		font-weight: bold;
-		margin-left: 5%;
+		margin-left: 47%;
+	}
+	.Plats_1 p:nth-child(1) {
+		width: 50%;
 	}
 	.Plats_2 span {
 		font-weight: bold;
-		margin-left: 12%;
+		margin-left: 38%;
 	}
 	.Plats_3 span {
 		font-weight: bold;
-		margin-left: 62%;
+		margin-left: 46%;
 	}
 	.Plats p:nth-child(2) {
 		font-weight: normal;
@@ -191,11 +194,11 @@
 	}
 	.Desserts_2 span {
 		font-weight: bold;
-		margin-left: 20%;
+		margin-left: 70%;
 	}
 	.Desserts_3 span {
 		font-weight: bold;
-		margin-left: 10%;
+		margin-left: 63%;
 	}
 	.Desserts p:nth-child(2) {
 		font-weight: normal;

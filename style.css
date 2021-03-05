@@ -1,8 +1,16 @@
 @font-face {
-    font-family: 'Raleway-VariableFont_wght';
-    src: url('Raleway-VariableFont_wght.eot') format('eot'),
-         url('Raleway-VariableFont_wght.ttf') format('truetype'),
-         url('Raleway-VariableFont_wght.svg') format('svg');
+    font-family: 'shrikhandregular';
+    src: url('shrikhand-regular-webfont.woff2') format('woff2'),
+         url('shrikhand-regular-webfont.woff') format('woff');
+    font-weight:normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'robotoregular';
+    src: url('roboto-regular-webfont.woff2') format('woff2'),
+         url('roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 @media screen and (max-width: 425px)
 {
@@ -10,12 +18,15 @@
 		width: 100%;
     	margin: 0;
 	}
-	h1,h2,p {
-		font-family: Raleway-VariableFont_wght;
+	h1,h2,h3 {
+		font-family: robotoregular;
+	}
+	p,span,a,li {
+		font-family: robotoregular;
 	}
 	/*header*/
 	h1 {
-		font-size: 1.5em;
+		font-size: 1.6em;
 	}
     #image {
     	text-align: center;
@@ -27,7 +38,7 @@
     }
     .home {
     	background-color:#f6f6f6;
-    	height: 300px;
+    	height: 340px;
     	width: 100%;
     }
     .formulaire{
@@ -50,15 +61,22 @@
 		margin: auto;
 	}
 	.home h2 {
-		font-size:1em;
+		font-size:1.1em;
+		font-weight: normal;
+	}
+	.home h1 {
+		margin-top: 25px;
 	}
 	.home h1,h2 {
 		text-align: center;
 	}
+	.home .fas { 
+	    padding-right: 10px;
+	}
 	.button1 {
    		display: block;
    		margin : auto;
-   		background:linear-gradient(#cc81ec, #8932b0);
+   		background:linear-gradient(#FF79DA, #9356DC);
    		border:none;
    		border-radius: 25px;
    		padding: 15px 15px 15px 15px;
@@ -69,36 +87,91 @@
 	.button1 a {
 		text-decoration: none;
 		color: #FFF;
+		padding: 15px;
 	}
 
 	/*body*/
 	.Fonctionnement h2 {
 		text-align: left;
 		padding-left: 15px;
+		font-weight: bold;
+	}
+	.Fonctionnement a {
+		text-decoration: none;
+		color:black;
+		font-weight: bold;
+	}
+	.Fonctionnement p {
+		font-size:1,5em;
+	}
+	.Fonctionnement span {
+		position: relative;
+	    left: -98px;
+	    border-radius: 100%;
+	    padding: 5px 10px;
+	    background-color: #9356DC;
+	    border:none;
+	    color:white;
+	}
+	.Fonctionnement .menu_2 span {
+		position: relative;
+	    left: -104px;
+	    border-radius: 100%;
+	    padding: 5px 10px;
 	}
 	.menu_1  {
 		text-align: center;
 		border-radius: 20px 20px 20px 20px;
-		margin:0 10px 20px 10px;
-		padding: 5px 0 5px 0;
-		box-shadow:0px 4px 5px #bfbfbf;
+		margin:0 10px 20px 20px;
+		background-color:#F2F2F2;
+		padding: 15px 0 10px 0;
+		box-shadow:0px 1px 18px #bfbfbf;
+		width: 90%;
+	}
+	.menu_1:active  {
+		background-color: #FF79DA;
 	}
 	.menu_2  {
 		text-align: center;
 		border-radius: 20px 20px 20px 20px;
-		margin:0 10px 20px 10px;
-		padding: 5px 0 5px 0;
-		box-shadow:0px 4px 5px #bfbfbf;
+		margin:0 10px 20px 20px;
+		background-color:#F2F2F2;
+		padding: 15px 0 10px 0;
+		box-shadow:0px 1px 18px #bfbfbf;
+		width: 90%;
+	}
+	.menu_2:active  {
+		background-color: #FF79DA;
 	}
 	.menu_3  {
 		text-align: center;
 		border-radius: 20px 20px 20px 20px;
-		margin:0 10px 50px 10px;
-		padding: 5px 0 5px 0;
-		box-shadow:0px 4px 5px #bfbfbf;
+		margin:0 10px 50px 20px;
+		background-color:#F2F2F2;
+		padding: 15px 0 10px 0;
+		box-shadow:0px 1px 18px #bfbfbf;
+		width: 90%;
 	}
-	.menu_1 p {
-		font-size:1,5em;
+	.menu_3:active  {
+		background-color: #FF79DA;
+	}
+	.menu_1 .fas {
+		position:relative;
+		left:-50px;
+		color:grey;
+	}
+	.menu_1 .fas:active {
+		color: #9356DC;
+	}
+	.menu_2 .fas {
+		position:relative;
+		left:-55px;
+		color:grey;
+	}
+	.menu_3 .fas {
+		position:relative;
+		left:-55px;
+		color:grey;
 	}
 	.restaurant {
 		background-color: #F2F2F2;
@@ -106,37 +179,37 @@
 	}
 	.restaurant h2 {
 		text-align: left;
-		padding-top: 30px;
+		padding-top: 50px;
 		padding-left: 15px;
 	}
 	.resto_1 {
-		height:250px;
-		width: 95%;
-		margin:0 10px 20px 10px;
+		height:240px;
+		width: 90%;
+		margin:0 10px 20px 20px;
 		box-shadow:0px 4px 5px #bfbfbf;
 		border-radius: 15px 15px 15px 15px;
 		background-color: white;
 	}
 	.resto_2 {
-		height:250px;
-		width: 95%;
-		margin:0 10px 20px 10px;
+		height:240px;
+		width: 90%;
+		margin:0 10px 20px 20px;
 		box-shadow:0px 4px 5px #bfbfbf;
 		border-radius: 15px 15px 15px 15px;
 		background-color: white;
 	}
 	.resto_3 {
-		height:250px;
-		width: 95%;
-		margin:0 10px 20px 10px;
+		height:240px;
+		width: 90%;
+		margin:0 10px 20px 20px;
 		box-shadow:0px 4px 5px #bfbfbf;
 		border-radius: 15px 15px 15px 15px;
 		background-color: white;
 	}
 	.resto_4 {
-		height:250px;
-		width: 95%;
-		margin:0 10px 20px 10px;
+		height:240px;
+		width: 90%;
+		margin:0 10px 20px 20px;
 		box-shadow:0px 4px 5px #bfbfbf;
 		border-radius: 15px 15px 15px 15px;
 		background-color: white;
@@ -146,39 +219,110 @@
 		height: 170px;
 		width: 100%;
 		border-radius: 15px 15px 0 0;
+		margin-bottom: 10px
 	}
 	.resto_2 img {
 		object-fit: cover;
 		height: 170px;
 		width: 100%;
 		border-radius: 15px 15px 0 0;
+		margin-bottom: 10px
 	}
 	.resto_3 img {
 		object-fit: cover;
 		height: 170px;
 		width: 100%;
 		border-radius: 15px 15px 0 0;
+		margin-bottom: 10px
 	}
 	.resto_4 img {
 		object-fit: cover;
 		height: 170px;
 		width: 100%;
 		border-radius: 15px 15px 0 0;
+		margin-bottom: 10px
+	}
+	.resto_1 span, p {
+		margin: 5px 0 10px 15px;
+	}
+	.resto_2 span,p {
+		margin: 5px 0 10px 15px;
+	}
+	.resto_3 span,p {
+		margin: 5px 0 10px 15px;
+	}
+	.resto_4 span,p {
+		margin: 5px 0 10px 15px;
+	}
+	.resto_1 span {
+		font-weight: bold;
+		font-size: 1em;
+	}
+	.resto_2 span {
+		font-weight: bold;
+		font-size: 1em;
+	}
+	.resto_3 span {
+		font-weight: bold;
+		font-size: 1em;
+	}
+	.resto_4 span {
+		font-weight: bold;
+		font-size: 1em;
+	}
+	.resto_1 .far {
+		position: absolute;
+    	left: 85%;
+    	padding-top: 10px;
+    	font-size: 25px;
+	}
+	.resto_1 .far:active { /* A voir comment faire */
+		color:#9356DC;	
+	}
+	.resto_2 .far {
+		position: absolute;
+    	left: 85%;
+    	padding-top: 10px;
+    	font-size: 25px;
+	}
+	.resto_3 .far {
+		position: absolute;
+    	left: 85%;
+    	padding-top: 10px;
+    	font-size: 25px;
+	}
+	.resto_4 .far {
+		position: absolute;
+    	left: 85%;
+    	padding-top: 10px;
+    	font-size: 25px;
 	}
 	/*footer*/
 	.footer {
 		background-color: #303030;
-		height: 170px;
+		height: 200px;
 		width:100%;
 		color:white;
+	}
+	footer p {
+		font-family:shrikhandregular;
+		font-size: 1em;
+		padding: 15px 0 0 0;
 	}
 	footer ul {
 		list-style-type: none;
 		padding: 0 0 0 15px;
 	}
-	.footer img {
-		height: 20px;
-		text-align: left;
-		padding: 15px 0 0 15px;
+	footer ul li {
+		margin-bottom: 10px;
 	}
+	footer a {
+		text-decoration: none;
+		color:white;
+	}
+	footer .fas {
+		margin-right: 10px;
+	}
+
 }
+
