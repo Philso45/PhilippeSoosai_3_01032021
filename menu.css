@@ -165,7 +165,7 @@
 
   /* a verifier */
   .box {
-    background-color: #95a9d6;
+    background-color: #8fdeca;
     width: 20%;
     position: relative;
     left: 1px;
@@ -174,7 +174,7 @@
     border-radius: 0 15px 15px 0;
     transform: scaleX(0);
     transition-property: transform;
-    transition-duration: 1000ms;
+    transition-duration: 0.5s;
     transform-origin: 100% 0%;
     animation-name: good-ani;
   }
@@ -191,15 +191,31 @@
     width: 65%;
   }
 
-  /*
-  .rotate .fas:active {
-  	position: absolute;
-      left: 37%;
-      bottom: 19px;
-      font-size: 1.5em;
-      text-align: center;
+  .rotate .fas {
+    position: absolute;
+    left: 37%;
+    bottom: 19px;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
   }
-  */
+
+  .rotate .fas {
+    -webkit-transition: -webkit-transform 0.9s;
+    -moz-transition: -moz-transform 0.9s;
+    -o-transition: -o-transform 0.9s;
+    -ms-transition: -ms-transform 0.9s;
+    transition: transform 0.9s;
+  }
+
+  .rotate .fas:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+
   .Entrees a {
     text-decoration: none;
     color: black;
