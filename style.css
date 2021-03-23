@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "shrikhandregular";
   src: url("shrikhand-regular-webfont.woff2") format("woff2"), url("shrikhand-regular-webfont.woff") format("woff");
@@ -48,13 +47,20 @@
   }
 
   .loader {
-    width: 100%;
-    height: 2107px;
-    /*cache l'écran*/
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-name: loader;
+    animation-fill-mode: forwards;
     position: absolute;
     z-index: 2;
+    visibility: hidden;
   }
 
+  @keyframes loader {
+    to {
+      visibility: visible;
+    }
+  }
   .chargement {
     border: 10px solid #f3f3f3;
     border-top: 10px solid #9356DC;
@@ -128,12 +134,13 @@
     padding-right: 10px;
   }
 
-  .button1 {
-    width: 54%;
+  .button {
+    width: 64%;
     display: block;
     margin: auto;
     background: linear-gradient(#FF79DA, #9356DC);
     border: none;
+    color: white;
     border-radius: 25px;
     padding: 15px 15px 15px 15px;
     margin-top: 30px;
@@ -142,14 +149,25 @@
     text-decoration: none;
     text-align: center;
     transform: scale(1);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
   }
-
-  .button1:hover {
-    background: linear-gradient(#FF79DA, #bb95e9);
+  .button:hover .button__bg {
+    opacity: 1;
+    border-radius: 25px;
   }
-
-  .button1 span {
-    color: #FFF;
+  .button__bg {
+    position: absolute;
+    border-radius: 25px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #c9aaed;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
   }
 
   /*body*/
@@ -200,7 +218,7 @@
     width: 90%;
   }
 
-  .menu_1:active {
+  .menu_1:hover {
     background-color: #fbd0f0;
   }
 
@@ -216,7 +234,7 @@
     width: 90%;
   }
 
-  .menu_2:active {
+  .menu_2:hover {
     background-color: #fbd0f0;
   }
 
@@ -232,7 +250,7 @@
     width: 90%;
   }
 
-  .menu_3:active {
+  .menu_3:hover {
     background-color: #fbd0f0;
   }
 
@@ -389,7 +407,7 @@
     height: 277px;
   }
 
-  .button1 {
+  .button {
     width: 23%;
   }
 
@@ -470,7 +488,7 @@
     height: 277px;
   }
 
-  .button1 {
+  .button {
     width: 16%;
   }
 

@@ -81,21 +81,51 @@
     }
     /* body */
     .entree {
-    	animation: fadein 2s linear forwards;
+    	visibility: hidden;
+    	animation: fadein 2s 200ms ;
+    	animation-fill-mode: forwards;
     }
     .plat {
-    	animation: fadein 4s linear;
+    	visibility: hidden;
+    	animation: fadein_2 2s 600ms ;
+    	animation-fill-mode: forwards;
     }
     .dessert {
-    	animation: fadein 6s linear;
+    	visibility: hidden;
+    	animation: fadein_3 2s  900ms ;
+    	animation-fill-mode: forwards;
     }
     
     @keyframes fadein {
+		from {
+    	opacity: 0;
+    	
+	  }
+
+	  	to {
+	  	visibility:visible;
+	    opacity: 1;
+	  }
+
+	}
+	@keyframes fadein_2 {
+		from {
+    	opacity: 0;
+	  }
+
+	  	to {
+	    visibility:visible;
+	    opacity: 1;
+	  }
+
+	}
+	@keyframes fadein_3 {
 		0% {
     	opacity: 0;
 	  }
 
 	  	100% {
+	    visibility:visible;
 	    opacity: 1;
 	  }
 
@@ -130,34 +160,45 @@
 	/* a verifier */
 
 	.box {
-		display: none;
-	    background-color: red;
+		
+	    background-color: #95a9d6;
 	    width: 20%;
 	    position: relative;
 	    left: 1px;
 	    bottom: 35px;
-	    height: 65px;
+	    height: 66px;
 	    border-radius: 0 15px 15px 0;
 	    transform: scaleX(0);
 	    transition-property: transform;
 	 	transition-duration: 1000ms;
+	 	transform-origin: 100% 0%;
+        animation-name: good-ani;
+
 	}
 	.prix {
 		&:active > .box {
 	 			transform:scaleX(1);
-	 			display: block;
-
-	 			}
+	 			
+	 		}
 	 	&:active > span {
-	 		margin-right: 0;
+	 		margin-right: 5px;
 	 		}
 	 	&:active > p {
 	 		text-overflow: ellipsis;
 	 		overflow: hidden;
 	 		width: 65%;
-
-	 		}
-		}
+	 	}
+	}
+	
+    /*
+	.rotate .fas:active {
+		position: absolute;
+	    left: 37%;
+	    bottom: 19px;
+	    font-size: 1.5em;
+	    text-align: center;
+	}
+	*/
 	.Entrees a {
 		text-decoration: none;
 		color:black;
@@ -235,11 +276,13 @@
 	}
 	.prix p {
 		font-weight: normal;
+		width: 400%;
 	}
 	.entree span {
 		font-weight: bold;
 		margin-right:2%;
 	}
+
 	.Entrees p:nth-child(2) {
 		font-weight: normal;
 	}
@@ -298,7 +341,6 @@
         transition: opacity 250ms;
 	    }
 	}
-
 
 	
 	
@@ -360,6 +402,9 @@
 	}
 	.Desserts {
 		margin-left: 4%;
+	}
+	.box {
+		width: 12%;
 	}
 }
 

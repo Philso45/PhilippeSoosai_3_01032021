@@ -87,22 +87,47 @@
 
   /* body */
   .entree {
-    animation: fadein 2s linear forwards;
+    visibility: hidden;
+    animation: fadein 2s 200ms;
+    animation-fill-mode: forwards;
   }
 
   .plat {
-    animation: fadein 4s linear;
+    visibility: hidden;
+    animation: fadein_2 2s 600ms;
+    animation-fill-mode: forwards;
   }
 
   .dessert {
-    animation: fadein 6s linear;
+    visibility: hidden;
+    animation: fadein_3 2s 900ms;
+    animation-fill-mode: forwards;
   }
 
   @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  @keyframes fadein_2 {
+    from {
+      opacity: 0;
+    }
+    to {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  @keyframes fadein_3 {
     0% {
       opacity: 0;
     }
     100% {
+      visibility: visible;
       opacity: 1;
     }
   }
@@ -140,25 +165,25 @@
 
   /* a verifier */
   .box {
-    display: none;
-    background-color: red;
+    background-color: #95a9d6;
     width: 20%;
     position: relative;
     left: 1px;
     bottom: 35px;
-    height: 65px;
+    height: 66px;
     border-radius: 0 15px 15px 0;
     transform: scaleX(0);
     transition-property: transform;
     transition-duration: 1000ms;
+    transform-origin: 100% 0%;
+    animation-name: good-ani;
   }
 
   .prix:active > .box {
     transform: scaleX(1);
-    display: block;
   }
   .prix:active > span {
-    margin-right: 0;
+    margin-right: 5px;
   }
   .prix:active > p {
     text-overflow: ellipsis;
@@ -166,6 +191,15 @@
     width: 65%;
   }
 
+  /*
+  .rotate .fas:active {
+  	position: absolute;
+      left: 37%;
+      bottom: 19px;
+      font-size: 1.5em;
+      text-align: center;
+  }
+  */
   .Entrees a {
     text-decoration: none;
     color: black;
@@ -257,6 +291,7 @@
 
   .prix p {
     font-weight: normal;
+    width: 400%;
   }
 
   .entree span {
@@ -286,7 +321,7 @@
     font-weight: normal;
   }
 
-  .button2 {
+  .button {
     display: block;
     margin: auto;
     background: linear-gradient(#FF79DA, #9356DC);
@@ -301,15 +336,24 @@
     width: 50%;
     text-align: center;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
   }
-
-  .button2 a {
-    text-decoration: none;
-    color: #fff;
+  .button:hover .button__bg {
+    opacity: 1;
+    border-radius: 25px;
   }
-
-  .button2:hover {
-    background: linear-gradient(#FF79DA, #bb95e9);
+  .button__bg {
+    position: absolute;
+    border-radius: 25px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #c9aaed;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
   }
 
   /*footer*/
@@ -379,6 +423,10 @@
   .Desserts {
     margin-left: 4%;
   }
+
+  .box {
+    width: 12%;
+  }
 }
 @media screen and (min-width: 980px) {
   section {
@@ -438,7 +486,7 @@
     margin-left: 4%;
   }
 
-  .button2 {
+  .button {
     width: 20%;
   }
 
