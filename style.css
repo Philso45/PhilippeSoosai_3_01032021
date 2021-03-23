@@ -47,8 +47,8 @@
   }
 
   .loader {
-    animation-duration: 3s;
-    animation-delay: 3s;
+    animation-duration: 1s;
+    animation-delay: 1s;
     animation-name: loader;
     animation-fill-mode: forwards;
     position: absolute;
@@ -70,9 +70,9 @@
     border-radius: 50%;
     margin: auto;
     position: absolute;
-    -webkit-animation: spin 1.5s linear infinite;
-    -o-animation: spin 1.5s linear infinite;
-    animation: spin 1.5s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
     top: 0;
     left: 0;
     right: 0;
