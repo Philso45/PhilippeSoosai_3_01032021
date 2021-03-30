@@ -176,7 +176,6 @@
     transition-property: transform;
     transition-duration: 0.5s;
     transform-origin: 100% 0%;
-    animation-name: good-ani;
   }
 
   .prix:active > .box {
@@ -191,6 +190,21 @@
     width: 65%;
   }
 
+  .prix:hover .box .rotate .fas {
+    -webkit-transition: -webkit-transform 0.9s;
+    -moz-transition: -moz-transform 0.9s;
+    -o-transition: -o-transform 0.9s;
+    -ms-transition: -ms-transform 0.9s;
+    transition: transform 0.9s;
+    transition-delay: 0.5ms;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    animation: spin 1s;
+  }
+
   .rotate .fas {
     position: absolute;
     left: 37%;
@@ -200,22 +214,14 @@
     color: white;
   }
 
-  .rotate .fas {
-    -webkit-transition: -webkit-transform 0.9s;
-    -moz-transition: -moz-transform 0.9s;
-    -o-transition: -o-transform 0.9s;
-    -ms-transition: -ms-transform 0.9s;
-    transition: transform 0.9s;
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
   }
-
-  .rotate .fas:hover {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-
   .Entrees a {
     text-decoration: none;
     color: black;
