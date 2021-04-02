@@ -165,32 +165,42 @@
 
   /* a verifier */
   .box {
+    display: none;
     background-color: #8fdeca;
     width: 20%;
     position: relative;
     left: 1px;
-    bottom: 35px;
-    height: 66px;
     border-radius: 0 15px 15px 0;
     transform: scaleX(0);
     transition-property: transform;
     transition-duration: 0.5s;
     transform-origin: 100% 0%;
+    animation: checked 1s;
   }
 
-  .prix:active > .box {
+  .dessert:active .box, .plat:active .box, .entree:active .box {
+    display: block;
     transform: scaleX(1);
   }
-  .prix:active > span {
+  .dessert:active > span, .plat:active > span, .entree:active > span {
     margin-right: 5px;
   }
-  .prix:active > p {
+  .dessert:active p, .plat:active p, .entree:active p {
     text-overflow: ellipsis;
     overflow: hidden;
+    white-space: nowrap;
     width: 65%;
   }
 
-  .prix:hover .box .rotate .fas {
+  @-webkit-keyframes checked {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  .dessert .box .rotate .fas, .plat .box .rotate .fas, .entree:hover .box .rotate .fas {
     -webkit-transition: -webkit-transform 0.9s;
     -moz-transition: -moz-transform 0.9s;
     -o-transition: -o-transform 0.9s;
@@ -226,33 +236,39 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
+    width: 100%;
+  }
+
+  .Entrees h4 {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 5px 0 0 10px;
+  }
+
+  .Plats h4 {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 5px 0 0 10px;
   }
 
   .Plats a {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    width: 100%;
   }
 
   .Desserts a {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    width: 100%;
   }
 
-  .Entrees p {
-    font-size: 1, 5em;
-    margin: 2px 0 6px 9px;
-  }
-
-  .Plats p {
-    font-size: 1, 5em;
-    margin: 2px 0 6px 9px;
-  }
-
-  .Desserts p {
-    font-size: 1, 5em;
-    margin: 2px 0 6px 9px;
+  .Desserts h4 {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 5px 0 0 10px;
   }
 
   .entree {
@@ -260,20 +276,14 @@
     border-radius: 15px;
     margin: 0 10px 15px 20px;
     background-color: #FFF;
-    padding: 5px 0 5px 0;
+    display: flex;
+    /*box*/
     box-shadow: 0px 1px 18px #bfbfbf;
     width: 90%;
-    height: 55px;
-    /* a retirer si le box nest pas bon */
   }
 
   .entree:last-child {
     margin-bottom: 40px;
-  }
-
-  .entree span {
-    font-weight: bold;
-    margin-right: 2%;
   }
 
   .plat {
@@ -281,10 +291,9 @@
     border-radius: 15px;
     margin: 0 10px 15px 20px;
     background-color: #FFF;
-    padding: 5px 0 5px 0;
+    display: flex;
     box-shadow: 0px 1px 18px #bfbfbf;
     width: 90%;
-    height: 55px;
   }
 
   .plat:last-child {
@@ -296,10 +305,9 @@
     border-radius: 15px;
     margin: 0 10px 15px 20px;
     background-color: #FFF;
-    padding: 5px 0 5px 0;
+    display: flex;
     box-shadow: 0px 1px 18px #bfbfbf;
     width: 90%;
-    height: 55px;
   }
 
   .dessert:last-child {
@@ -309,16 +317,17 @@
   .prix {
     display: flex;
     justify-content: space-between;
+    margin-right: 10px;
   }
 
   .prix p {
     font-weight: normal;
-    width: 400%;
   }
 
   .entree span {
     font-weight: bold;
-    margin-right: 2%;
+    margin-top: 4px;
+    margin-left: 24px;
   }
 
   .Entrees p:nth-child(2) {
@@ -327,20 +336,41 @@
 
   .plat span {
     font-weight: bold;
-    margin-right: 2%;
+    margin-top: 9px;
+    margin-left: 24px;
   }
 
-  .Plats p:nth-child(2) {
+  .Plats p {
     font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 5px;
+    padding: 5px 0 10px 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.9em;
   }
 
   .dessert span {
     font-weight: bold;
-    margin-right: 2%;
+    margin-top: 4px;
+    margin-left: 24px;
   }
 
-  .Desserts p:nth-child(2) {
+  .Entrees p {
     font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 5px;
+    padding: 0 0 10px 10px;
+    font-size: 0.9em;
+  }
+
+  .Desserts p {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 5px;
+    padding: 0 0 10px 10px;
+    font-size: 0.9em;
   }
 
   .button {
@@ -483,16 +513,14 @@
     width: 5%;
   }
 
-  .prix:hover > .box {
+  .dessert:hover .box, .plat:hover .box, .entree:hover .box {
     transform: scaleX(1);
     display: block;
   }
-  .prix:hover > span {
+  .dessert:hover span, .plat:hover span, .entree:hover span {
     margin-right: 0;
   }
-  .prix:hover > p {
-    text-overflow: ellipsis;
-    overflow: hidden;
+  .dessert:hover p, .plat:hover p, .entree:hover p {
     width: 90%;
   }
 
