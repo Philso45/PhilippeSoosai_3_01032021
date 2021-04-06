@@ -158,6 +158,17 @@
 		width: 10%;
 	}
 	/* a verifier */
+	.prix span{
+		transition: left 1s, transform 1s;
+		position: absolute;
+    	left: 86%;
+    	white-space: nowrap;
+	}
+	.entree, .dessert, .plat{
+		&:active span {
+    	transform: translateX(-249%)
+		}
+	}
 
 	.box {
 		display: none;
@@ -184,8 +195,10 @@
 	 		text-overflow: ellipsis;
 	 		overflow: hidden;
 	 		white-space: nowrap;
-	 		width: 65%;
-	 		
+	 		width: 83%;
+	 	}
+	 	&:active .prix {
+	 		width: 269px;	
 	 	}
 	}
 	@-webkit-keyframes checked {
@@ -216,8 +229,8 @@
     
 	.rotate .fas {
 		position: absolute;
-	    left: 37%;
-	    bottom: 19px;
+	    left: 31%;
+	    bottom: 18px;
 	    font-size: 1.5em;
 	    text-align: center;
 	    color:white;
@@ -321,7 +334,6 @@
 	.entree span {
 		font-weight: bold;
 		margin-top: 4px;
-		margin-left: 24px;
 	}
 
 	.Entrees p:nth-child(2) {
@@ -330,15 +342,14 @@
 	
 	.plat span {
 		font-weight: bold;
-		margin-top: 9px;
-		margin-left: 24px;
+		margin-top: 4px;
 	}
 	
 	.Plats p {
 		font-weight: normal;
 		margin-bottom: 0;
 		margin-top: 5px;
-		padding: 5px 0 10px 10px;
+		padding: 0 0 10px 10px;
 		text-overflow: ellipsis;
 	    overflow: hidden;
 	    white-space: nowrap;
@@ -347,7 +358,7 @@
 	.dessert span {
 		font-weight: bold;
 		margin-top: 4px;
-		margin-left: 24px;
+	    margin-right: 10px;
 	}
 	.Entrees p {
 		font-weight: normal;
@@ -524,5 +535,16 @@
 	}
 	#image .fas {
 		display: none;
+	}
+	.prix span{
+		transition: left 1s, transform 1s;
+		position: absolute;
+    	left: 88%;
+    	white-space: nowrap;
+	}
+	.entree, .dessert, .plat{
+		&:hover span {
+    	transform: translateX(-249%)
+		}
 	}
 }
